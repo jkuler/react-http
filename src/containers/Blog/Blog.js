@@ -10,7 +10,8 @@ import axios from 'axios';
 
 class Blog extends Component {
   state = {
-    posts: []
+    posts: [],
+    selectedPostId: null
   }
 
   // async componentDidMount() {
@@ -34,7 +35,7 @@ class Blog extends Component {
  }
 
  postSekectedHandler = (id) => {
-
+    this.setState({selectedPostId: id});
  }
   render() {
 
