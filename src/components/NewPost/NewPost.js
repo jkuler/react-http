@@ -11,7 +11,15 @@ class NewPost extends Component {
     }
 
     postDataHandler = () => {
-      axios.post()
+      const postData = {
+          title: this.state.title,
+          body: this.state.content,
+          auhtor: this.state.author
+      }  
+      axios.post('https://jsonplaceholder.typicode.com/posts', postData)
+            .then(res => {
+                console.log(res);
+            })
     }
 
     render () {
