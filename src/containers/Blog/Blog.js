@@ -7,7 +7,7 @@ import NewPost from './NewPost/NewPost';
 import FullPost from './FullPost/FullPost'
 
 // import axios from 'axios';
-import axios from '../../axios'
+// import axios from '../../axios'
 
 
 class Blog extends Component {
