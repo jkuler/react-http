@@ -9,8 +9,6 @@ class Posts extends Component {
     state = {
         posts: []
       };
-
-
     componentDidMount(){
         console.log(this.props)
         axios.get('/posts')
@@ -46,7 +44,6 @@ class Posts extends Component {
             );
             });
         }
-
         return (
             <section className='Posts'>
                 { posts }
