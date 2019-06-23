@@ -34,7 +34,7 @@ class Blog extends Component {
                     exact
                     activeClassName="my-active"
                     activeStyle={{
-                      color: '#432Fe1', textDecoration: 'underline'
+                      color: '#fa923f', textDecoration: 'underline'
                     }}>Home</NavLink></li>
               <li><NavLink to={ {
                 pathname: '/new-post',
