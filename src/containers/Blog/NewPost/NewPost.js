@@ -12,6 +12,7 @@ class NewPost extends Component {
         submitted: false
     }
     componentDidMount(){
+        // this.props.
         console.log(this.props)
     }
     postDataHandler = () => {
