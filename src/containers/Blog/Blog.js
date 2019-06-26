@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Suspense } from 'react';
 import  { Route, NavLink, Switch, Redirect } from 'react-router-dom';
 
 import './Blog.css';
@@ -10,6 +10,7 @@ const AsyncNewPost = asyncComponent(() =>{
   return import('./NewPost/NewPost')
 });
 
+const NewPosts = React.lazy(() => import('./NewPost/NewPost'))
 // import axios from 'axios';
 // import axios from '../../axios'
 
@@ -58,7 +59,12 @@ state = {
         
         
         <Switch> 
-          { this.state.auth ? <Route path="/new-post"  component={ AsyncNewPost } /> : null } 
+          {/* { this.state.auth ? <Route path="/new-post"  component={ AsyncNewPost } /> : null }  */}
+          { this.state.auth ? <Route path="/new-post"  render={()=> (
+          <Suspense fallback={<div>Loading...</div>}>
+            <NewPosts />
+          </Suspense>
+          )} /> : null } 
           <Route path="/posts" component={ Posts } /> 
           <Route render={() => <h1>Not Found</h1>} /> 
           {/* <Redirect from="/" to="/posts" />  */}
