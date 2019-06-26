@@ -11,7 +11,10 @@ import NewPost from './NewPost/NewPost';
 
 class Blog extends Component {
  
-
+state = {
+      auth: false
+    }
+    
   // async componentDidMount() {
   //   const { data: response } = await axios.get(
   //     'https://jsonplaceholder.typicode.com/posts',
@@ -22,6 +25,7 @@ class Blog extends Component {
 
   render() {
    
+    
 
     return (
 
@@ -49,7 +53,7 @@ class Blog extends Component {
         
         
         <Switch> 
-          <Route path="/new-post"  component={ NewPost } /> 
+          { this.state.auth ? <Route path="/new-post"  component={ NewPost } /> : null } 
           <Route path="/posts" component={ Posts } /> 
           <Redirect from="/" to="/posts" /> 
           {/* <Route path="/" component={ Posts } />   */}
